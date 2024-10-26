@@ -11,6 +11,12 @@
         "src": "/(.*)",
         "dest": "/manage.py"
       }
-    ]
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "Blood_Bank.settings",  
+      "DATABASE_URL": "sqlite:///db.sqlite3" 
+    },
+    "installCommand": "pip install -r requirements.txt",  
+    "start": "gunicorn Blood_Bank.wsgi:application"  
   }
   
